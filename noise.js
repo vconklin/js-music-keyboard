@@ -22,41 +22,71 @@ $(document).ready( function() {
   buttons.on('click', function (event) {
     //play respective note
     var button = $(this)
+    var audio
 
     if (button.hasClass('c')) {
-      $('#cAudio')[0].play()
+      audio = $('#cAudio')[0]
+      audio.load()
+      audio.play()
     } else if (button.hasClass('d')) {
-      $('#dAudio')[0].play()
+      audio = $('#dAudio')[0]
+      audio.load()
+      audio.play()
     } else if (button.hasClass('e')) {
-      $('#eAudio')[0].play()
+      audio = $('#eAudio')[0]
+      audio.load()
+      audio.play()
     } else if (button.hasClass('f')) {
-      $('#fAudio')[0].play()
+      audio = $('#fAudio')[0]
+      audio.load()
+      audio.play()
     } else if (button.hasClass('g')) {
-      $('#gAudio')[0].play()
+      audio = $('#gAudio')[0]
+      audio.load()
+      audio.play()
     } else if (button.hasClass('a')) {
-      $('#aAudio')[0].play()
+      audio = $('#aAudio')[0]
+      audio.load()
+      audio.play()
     } else if (button.hasClass('b')) {
-      $('#bAudio')[0].play()
+      audio = $('#bAudio')[0]
+      audio.load()
+      audio.play()
     }
 
   })
 
   $(document).keypress(function (event) {
+    var audio
 
     if (event.which === 99) {
-      $('#cAudio')[0].play()
+      audio = $('#cAudio')[0]
+      audio.load()
+      audio.play()
     } else if (event.which === 100) {
-      $('#dAudio')[0].play()
+      audio = $('#dAudio')[0]
+      audio.load()
+      audio.play()
     } else if (event.which === 101) {
-      $('#eAudio')[0].play()
+      audio = $('#eAudio')[0]
+      audio.load()
+      audio.play()
     } else if (event.which === 102) {
-      $('#fAudio')[0].play()
+      audio = $('#fAudio')[0]
+      audio.load()
+      audio.play()
     } else if (event.which === 103) {
-      $('#gAudio')[0].play()
+      audio = $('#gAudio')[0]
+      audio.load()
+      audio.play()
     } else if (event.which === 97) {
-      $('#aAudio')[0].play()
+      audio = $('#aAudio')[0]
+      audio.load()
+      audio.play()
     } else if (event.which === 98) {
-      $('#bAudio')[0].play()
+      audio = $('#bAudio')[0]
+      audio.load()
+      audio.play()
     }
 
   })
