@@ -2,92 +2,42 @@ $(document).ready( function() {
 
   var buttons = $('.instrument').children('button.note')
 
-  // var note_reference = {
-  //   'c': 'cAudio',
-  //   'd': 'dAudio',
-  //   'e': 'eAudio',
-  //   'f': 'fAudio',
-  //   'g': 'gAudio',
-  //   'a': 'aAudio',
-  //   'b': 'bAudio'
-  // }
-
-  // for (var button of buttons) {
-  //   audio_id = button.attr["class"] + "Audio"
-  //   console.log(audio_id)
-  // }
-
-
-  //step 2: listen for events on those elements (click)
-  buttons.on('click', function (event) {
-    //play respective note
-    var button = $(this)
+  var play_audio = function (event) {
+    var button = $(event.target)
     var audio
 
-    if (button.hasClass('c')) {
+    if (button.hasClass('c') || event.which === 99) {
       audio = $('#cAudio')[0]
       audio.load()
       audio.play()
-    } else if (button.hasClass('d')) {
+    } else if (button.hasClass('d') || event.which === 100) {
       audio = $('#dAudio')[0]
       audio.load()
       audio.play()
-    } else if (button.hasClass('e')) {
+    } else if (button.hasClass('e') || event.which === 101) {
       audio = $('#eAudio')[0]
       audio.load()
       audio.play()
-    } else if (button.hasClass('f')) {
+    } else if (button.hasClass('f') || event.which === 102) {
       audio = $('#fAudio')[0]
       audio.load()
       audio.play()
-    } else if (button.hasClass('g')) {
+    } else if (button.hasClass('g') || event.which === 103) {
       audio = $('#gAudio')[0]
       audio.load()
       audio.play()
-    } else if (button.hasClass('a')) {
+    } else if (button.hasClass('a') || event.which === 97) {
       audio = $('#aAudio')[0]
       audio.load()
       audio.play()
-    } else if (button.hasClass('b')) {
+    } else if (button.hasClass('b') || event.which === 98) {
       audio = $('#bAudio')[0]
       audio.load()
       audio.play()
     }
+  }
 
-  })
+  buttons.on('click', play_audio)
+  $(document).keypress(play_audio)
 
-  $(document).keypress(function (event) {
-    var audio
-
-    if (event.which === 99) {
-      audio = $('#cAudio')[0]
-      audio.load()
-      audio.play()
-    } else if (event.which === 100) {
-      audio = $('#dAudio')[0]
-      audio.load()
-      audio.play()
-    } else if (event.which === 101) {
-      audio = $('#eAudio')[0]
-      audio.load()
-      audio.play()
-    } else if (event.which === 102) {
-      audio = $('#fAudio')[0]
-      audio.load()
-      audio.play()
-    } else if (event.which === 103) {
-      audio = $('#gAudio')[0]
-      audio.load()
-      audio.play()
-    } else if (event.which === 97) {
-      audio = $('#aAudio')[0]
-      audio.load()
-      audio.play()
-    } else if (event.which === 98) {
-      audio = $('#bAudio')[0]
-      audio.load()
-      audio.play()
-    }
-
-  })
 });
